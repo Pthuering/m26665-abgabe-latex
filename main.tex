@@ -6,17 +6,39 @@
 
 % zum Einblenden von Grafiken
 \usepackage{graphicx}
+% ändert die automatisch generierten wörter (inhaltsverzeichnis etc.) zu deutsch
+\usepackage[german]{babel}
 
 \begin{document}
 
     \tableofcontents
+
+    \newpage
+
+    \listoffigures
+
+    \begin{figure}
+        \centering
+        % error 'overfull' = bild zu groß für platz, fixed indem man width auf das 0.x Fache anpasst (hier 0.5) 
+        \includegraphics[width=0.5\linewidth]{graphics/DAVES_PANCAKES_RECIPE.jpg}
+        \caption[cooles rezept]{Abbildung zeigt details}
+
+        
+        %mit label werden grafiken in texts referenziert
+        \label{fig:DAVES_PANCAKES_RECIPE}
+    \end{figure}
     
     \section{Der Anfang vom Anfang.}
     Der Text ist verhext, braucht kein Slash und keine Klammern, 
     das ist der Hammer(n).
+    
+        Die Abbildung \ref{fig:DAVES_PANCAKES_RECIPE} zeigt das erleuterte Rezept
+        in größerem Detail. 
+        % line break mit leerzeichen zwischen den zeilen! so easy!
+        1.) zutaten
 
-    \includegraphics[width=0.5\linewidth]{graphics/DAVES_PANCAKES_RECIPE.jpg}
-
+        2.) bearbeitungsweise
+        
         \subsection {erstes Unterkapitel vom ersten Kapitel.}
         Badabing Badabum.
 
@@ -29,6 +51,7 @@
     \section{nächstes kapitel}
     you already know. 
 
+    
     
 
 \end{document}
