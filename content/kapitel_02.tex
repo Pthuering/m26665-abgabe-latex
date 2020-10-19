@@ -1,0 +1,43 @@
+\section{nächstes kapitel}
+you already know. 
+
+% linenos -> numeriert zeilen, frame=lines -> grenzt code mit linien ab, fontsize -> schriftgröße, 
+% firstnumber -> zeile, in der snippet anfängt, muss al erster parameter stehen
+\begin{minted}
+    [
+        firstnumber=5,
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        linenos
+        ]
+{java}
+
+package com.tutego.insel.ds.observer;
+
+import java.util.*;
+
+public class Party
+{
+  public static void main( String[] args )
+  {
+    Observer achim    = new JokeListener( "Achim" );
+    Observer michael  = new JokeListener( "Michael" );
+    JokeTeller chris  = new JokeTeller();
+
+    chris.addObserver( achim );
+
+    chris.tellJoke();
+    chris.tellJoke();
+
+    chris.addObserver( michael );
+
+    chris.tellJoke();
+
+    chris.deleteObserver( achim );
+
+    chris.tellJoke();
+  }
+}
+
+\end{minted}
