@@ -1,6 +1,8 @@
 \section{nächstes kapitel}
 you already know. 
-
+\begin{listing}[h]
+    %caption wird benötigt, um das lisiting in das verzeichnis aufzunehmen, same mit abbildungen
+    \caption[Quelltext]{beschreibe den Quelltext hier.}
 % linenos -> numeriert zeilen, frame=lines -> grenzt code mit linien ab, fontsize -> schriftgröße, 
 % firstnumber -> zeile, in der snippet anfängt, muss al erster parameter stehen
 % unter den mathescape eingaben dann die gewählte sprache in {}
@@ -43,3 +45,7 @@ public class Party
 }
 
 \end{minted}
+    \label{lst:mein_Quelltext}
+\end{listing}
+
+Im Quelltext \ref{lst:mein_Quelltext} sieht man einen Ausschnitt eines Java Quelltextes.
