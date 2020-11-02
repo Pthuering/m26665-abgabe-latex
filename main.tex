@@ -3,9 +3,16 @@
 \include{packages}
 
 
+
 \begin{document}
 
+    % command um ein hintergrundbild für alle seiten einzufügen, random kommentar im command um random leerzeichen raus zu kriegen
+    % außerdem transparent mit hilfe eines weiteren packages
+    \AddToShipoutPicture{%
+        \transparent{0.2}\includegraphics[width=\paperwidth, height=\paperheight]{graphics/DAVES_PANCAKES_RECIPE.jpg}}
+
     \tableofcontents
+
     \renewcommand{\listoflistingscaption}{Listingverzeichnis}
     \listoflistings
     
