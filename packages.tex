@@ -3,6 +3,8 @@
 % ändert die automatisch generierten wörter (inhaltsverzeichnis etc.) zu deutsch. 
 % default ist englisch, also einfach das includepackage löschen.
 \usepackage[english, ngerman]{babel}
+%für anführungszeichen im text
+\usepackage[autostyle, german=guillemets, german=quotes]{csquotes}
 % um Grafiken gezielt anzuzeigen mit /begin{figure}[H] /end{figure}
 \usepackage{float}
 %Quelltexthighlighting, integration dessen nicht als rastergrafik, sondern skalierbar
@@ -11,5 +13,8 @@
 \usepackage{eso-pic}
 % um hintergrund transparent zu machen
 \usepackage{transparent}
+%für verschiedene hintergrundbilder bei gerade/ungeraden seitenzahlen
+\usepackage{ifthen}
+%für tabellen 
+\usepackage{tabularx}
 
-\usepackage[autostyle, german=guillemets, german=quotes]{csquotes}

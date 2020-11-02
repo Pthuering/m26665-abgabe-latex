@@ -8,8 +8,25 @@
 
     % command um ein hintergrundbild für alle seiten einzufügen, random kommentar im command um random leerzeichen raus zu kriegen
     % außerdem transparent mit hilfe eines weiteren packages
+    %außerdem versch. hintergr. für gerade und ungerade seiten, wieder ein neues package
     \AddToShipoutPicture{%
-        \transparent{0.2}\includegraphics[width=\paperwidth, height=\paperheight]{graphics/DAVES_PANCAKES_RECIPE.jpg}}
+        \ifthenelse{
+            \isodd{
+                \value{page}}
+        }
+        {%
+            \transparent{0.2}\includegraphics[width=\paperwidth, height=\paperheight]{graphics/backg02.jpg}
+        }
+        {%
+            \transparent{0.2}\includegraphics[width=\paperwidth, height=\paperheight]{graphics/DAVES_PANCAKES_RECIPE.jpg}
+        }
+        
+        
+    
+    
+    
+    
+        }
 
     \tableofcontents
 
