@@ -3,7 +3,7 @@
 % ändert die automatisch generierten wörter (inhaltsverzeichnis etc.) zu deutsch. 
 % default ist englisch, also einfach das includepackage löschen.
 \usepackage[english, ngerman]{babel}
-%für anführungszeichen im text
+% für anführungszeichen im text
 \usepackage[autostyle, german=guillemets, german=quotes]{csquotes}
 % um Grafiken gezielt anzuzeigen mit /begin{figure}[H] /end{figure}
 \usepackage{float}
@@ -13,8 +13,25 @@
 \usepackage{eso-pic}
 % um hintergrund transparent zu machen
 \usepackage{transparent}
-%für verschiedene hintergrundbilder bei gerade/ungeraden seitenzahlen
+% für verschiedene hintergrundbilder bei gerade/ungeraden seitenzahlen
 \usepackage{ifthen}
-%für tabellen 
+% für tabellen 
 \usepackage{tabularx}
-
+% literaturverzeichnisse verwenden
+\usepackage[style=authortitle,natbib,backend=biber]{biblatex}
+% formatierung der footnote citation nach singers gemüt
+\makeatletter%
+\long\def\@makefntext#1{%
+    \parindent 1em\noindent \hb@xt@ 1.8em{\hss \hbox{{\normalfont \@thefnmark}}. }#1}%
+\makeatother
+% link einfärben und zur referenz springen
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue,
+    pdfborder= 0 0 0 % entfernt rahmen, falls noch vorhanden
+}
+% referenzieren eines kapitels mit namen
+\usepackage{nameref}

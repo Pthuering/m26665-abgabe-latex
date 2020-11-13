@@ -2,7 +2,7 @@
 % hiermit werden alle packages in eine separate .tex datei ausgeladen
 \include{packages}
 
-
+\addbibresource{lit/lit.bib}
 
 \begin{document}
 
@@ -22,27 +22,18 @@
         }
     }
 
-    
-    
-    
-
-    %\newpage
-
+    % alle Seiten und Tabellen in Reihenfolge
     \include{content/deckblatt.tex}
-
     \tableofcontents
-
     \renewcommand{\listoflistingscaption}{Listingverzeichnis}
     \listoflistings
-
     \include{content/kapitel_01}
     \include{content/kapitel_02}
     \include{content/kapitel_03}
-    
-        
     \newpage
-
     \listoffigures
+
+    \printbibliography
 
 \end{document}
 
