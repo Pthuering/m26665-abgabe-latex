@@ -1,0 +1,16 @@
+% eidesstattliche als .tex seite 
+   % \include{content/misc/eidesstatliche.tex}
+
+   \ClearShipoutPicture
+   % um nummer vor eintrag in verzeichnis zu löschen
+   \setcounter{secnumdepth}{0}
+   % eidesstattliche als pdf include
+   %muss allerdings anders in verzeichnis geadded werden
+   \includepdf[
+        addtotoc={
+            1, % seitennummer
+            section, % section: sect. oder subsection
+            1, % level: 1 (heißt section), 2 (heißt subsection)
+            Eidesstattliche Erklärung, % heading: titel in toc
+            lab:eidesstattliche_erklaerung % \ref
+        }]{content/misc/erklaerung.pdf}
