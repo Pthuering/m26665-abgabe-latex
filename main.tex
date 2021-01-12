@@ -6,6 +6,7 @@
 
 \begin{document}
 
+\include{config/background}
     % command um ein hintergrundbild für alle seiten einzufügen, random kommentar im command um random leerzeichen raus zu kriegen
     % außerdem transparent mit hilfe eines weiteren packages
     %außerdem versch. hintergr. für gerade und ungerade seiten, wieder ein neues package
@@ -27,13 +28,41 @@
     \tableofcontents
     \renewcommand{\listoflistingscaption}{Listingverzeichnis}
     \listoflistings
+    \newpage
+
+        % abstand zwischen neuen absätzen erhöhen, am anfang des eigentlichen contents gelistet
+\parskip 16pt % andere einheiten px, em, ex und viele mehr
+
     \include{content/kapitel_01}
     \include{content/kapitel_02}
     \include{content/kapitel_03}
+
+    Siehe \nameref{lab:eidesstattliche_erklaerung}
+
     \newpage
     \listoffigures
+    \newpage
+
+
 
     \printbibliography
+
+   % eidesstattliche als .tex seite 
+   % \include{content/misc/eidesstatliche.tex}
+
+   \ClearShipoutPicture
+   % um nummer vor eintrag in verzeichnis zu löschen
+   \setcounter{secnumdepth}{0}
+   % eidesstattliche als pdf include
+   %muss allerdings anders in verzeichnis geadded werden
+   \includepdf[
+        addtotoc={
+            1, % seitennummer
+            section, % section: sect. oder subsection
+            1, % level: 1 (heißt section), 2 (heißt subsection)
+            Eidesstattliche Erklärung, % heading: titel in toc
+            lab:eidesstattliche_erklaerung % \ref
+        }]{content/misc/erklaerung.pdf}
 
 \end{document}
 

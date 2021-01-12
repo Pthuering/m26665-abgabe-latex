@@ -3,6 +3,10 @@
 % ändert die automatisch generierten wörter (inhaltsverzeichnis etc.) zu deutsch. 
 % default ist englisch, also einfach das includepackage löschen.
 \usepackage[english, ngerman]{babel}
+% Einrückung neuer Paragraphen auf 0 setzen 
+\parindent 0pt
+
+
 % für anführungszeichen im text
 \usepackage[autostyle, german=guillemets, german=quotes]{csquotes}
 % um Grafiken gezielt anzuzeigen mit /begin{figure}[H] /end{figure}
@@ -35,3 +39,6 @@
 }
 % referenzieren eines kapitels mit namen
 \usepackage{nameref}
+
+% einfügen von pdfs 
+\usepackage{pdfpages}
