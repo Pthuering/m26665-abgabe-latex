@@ -2,7 +2,8 @@
     % außerdem transparent mit hilfe eines weiteren packages
     %außerdem versch. hintergr. für gerade und ungerade seiten, wieder ein neues package
     \AddToShipoutPicture{%
-        \ifthenelse{
+        \ifthenelse
+        {
             \isodd{
                 \value{page}}
         }
