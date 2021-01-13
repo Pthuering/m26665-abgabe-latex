@@ -1,6 +1,5 @@
 \section{Synthese}
 
-(kursiv)
 Das Ergebnis der Synthesephase sollte die Anwendung der designten Lösung sein, um die gesetzten Ziele 
 zu erreichen und die die Aufgabe begleitende Hypothese zu validieren.
 
@@ -9,9 +8,11 @@ Analysephase, muss die Reihenfolge aller Schritte genau eingehalten werden. In d
 alle vorher aufgestellten Thesen, Faktoren, Bedingungen, etc. mit Hilfe von Experimenten in die 
 Praxis umgesetzt, um erste konkrete Ergebnisse zu erzielen.
 
+
     \subsection{Lösungsansätze implementieren}
 
     Es gibt zwei Arten, auf die eine Lösung implementiert werden kann, entwickeln und kaufen. 
+    Ein Beispiel für eine selbst entwickelte Lösung kann im Listing \ref{lst:loesimpl} betrachtet werden.
     Sollte es den Anforderungen entsprechen, ist es fast immer effektiver die Lösung zu erwerben, 
     als sie selbst zu entwickeln. Dies trifft auch zu, sollte die erworbene Komponente nur zu einem 
     Teil zur Lösung beitragen. 
@@ -20,6 +21,56 @@ Praxis umgesetzt, um erste konkrete Ergebnisse zu erzielen.
     anderen Forschungsgruppe oder Firma kommen. Häufig treten im Zusammenhang dessen auch politische 
     oder Eigentums Probleme auf. Von Drittparteien erhaltene Daten sollten generell immer mit einer 
     gewissen Skepsis behandelt werden.
+
+
+    \begin{listing}[H]
+        %caption wird benötigt, um das lisiting in das verzeichnis aufzunehmen, same mit abbildungen
+        \caption[Loesungsimplementation Codebeispiel Java]{Beispiel einer Loesungsimplementation nach den festgelegten Vorschriften}
+    % linenos -> numeriert zeilen, frame=lines -> grenzt code mit linien ab, fontsize -> schriftgröße, 
+    % firstnumber -> zeile, in der snippet anfängt, muss al erster parameter stehen
+    % unter den mathescape eingaben dann die gewählte sprache in {}
+    % verfügbare sprachen via pygmentize dokumentation 
+    \begin{minted}
+        [
+            firstnumber=5,
+            frame=lines,
+            framesep=2mm,
+            baselinestretch=1.2,
+            linenos
+            ]
+    {java} 
+    
+    package com.tutego.insel.ds.observer;
+    
+    import java.util.*;
+    
+    public class Party
+    {
+      public static void main( String[] args )
+      {
+        Observer achim    = new JokeListener( "Achim" );
+        Observer michael  = new JokeListener( "Michael" );
+        JokeTeller chris  = new JokeTeller();
+    
+        chris.addObserver( achim );
+    
+        chris.tellJoke();
+        chris.tellJoke();
+    
+        chris.addObserver( michael );
+    
+        chris.tellJoke();
+    
+        chris.deleteObserver( achim );
+    
+        chris.tellJoke();
+      }
+    }
+    
+    \end{minted}
+        \label{lst:loesimpl}
+    \end{listing}
+
 
     \subsubsection{Experimente Designen}
 
@@ -54,28 +105,98 @@ Praxis umgesetzt, um erste konkrete Ergebnisse zu erzielen.
 
     Die aus Experimenten erhaltenen Daten sollten auf mehr als einem Medium gespeichert sein, um 
     den Verlust im Falle eines Ausfalls eines der Medien zu verhindern. Datenschutz sollte eine der 
-    obersten Prioritäten sein. Es empfiehlt sich, die Daten zu verschlüsseln und diesen Schlüssel 
+    obersten Prioritäten sein. Am besten sollten fertig bearbeitete Daten irgendwo im Internetz gespeichert
+    werden, damit sie für jeden zugänglich sind. Dies könnte mit Hilfe einer Webseite, wie im Listing
+    \ref{lst:htmlex} passieren. Es empfiehlt sich, die Daten zu verschlüsseln und diesen Schlüssel 
     nur an die Personen weiterzugeben, die unbedingt Zugriff auf die Daten benötigen. Werden über 
     die schon bestehenden Speicherplätze der Daten hinaus weitere Kopien angefertigt, so muss dies 
     unbedingt Dokumentiert werden, um unkontrollierte Verbreitung der Daten zu verhindern. Sind alle 
     Daten einmal gespeichert, sollten diese umgehend mit Hilfe des Copyright weiter geschützt werden. 
-    In der Regel ist es sinnvoll, zu viele Daten über das Experiment gespeichert zu haben als zu wenig. 
+    In der Regel ist es sinnvoll, zu viele Daten über das Experiment gespeichert zu haben als zu wenig.   
+
+    \begin{listing}[H]
+        %caption wird benötigt, um das lisiting in das verzeichnis aufzunehmen, same mit abbildungen
+        \caption[Anzeigemoeglichkeit Experimente via HTML]{Die Grundlage einer HTML Seite, zum Teilen der designten Experimente}
+    % linenos -> numeriert zeilen, frame=lines -> grenzt code mit linien ab, fontsize -> schriftgröße, 
+    % firstnumber -> zeile, in der snippet anfängt, muss al erster parameter stehen
+    % unter den mathescape eingaben dann die gewählte sprache in {}
+    % verfügbare sprachen via pygmentize dokumentation 
+    \begin{minted}
+        [
+            firstnumber=5,
+            frame=lines,
+            framesep=2mm,
+            baselinestretch=1.2,
+            linenos
+            ]
+    {html} 
+    
+        <!DOCTYPE html>
+        <html>
+            <body>
+
+                <h1>My First Heading</h1>
+                <p>My first paragraph.</p>
+
+            </body>
+        </html>
+    
+    \end{minted}
+        \label{lst:htmlex}
+    \end{listing}
 
     \subsubsection{Experimente durchführen}
 
     Jetzt gilt es nur noch, die bereits fertig geplanten Experimente durchzuführen. Dies 
     sollte genauestens nach Plan passieren, damit Fehler oder unerwartete Ergebnisse in den 
     Plänen gefunden und behoben werden können. Misslungene Experimente sollten als Hilfen 
-    gesehen werden, um die Pläne zu überarbeiten und dem Erfolg einen Schritt näher zu kommen.
+    gesehen werden, um die Pläne zu überarbeiten und dem Erfolg einen Schritt näher zu kommen. 
+    Um eine fehlerfreie 
+
 
     \subsubsection{Ergebnisse extrahieren}
 
     Oft können die direkten Ergebnisse eines Experiments nicht genutzt werden, um 
     Schlussfolgerungen zu ziehen. Zuerst müssen die Resultate reduziert werden, also 
     umgewandelt und kombiniert, damit die entstehenden Werte in Form der gewählten 
-    Performance Metrik dargestellt werden können. Im Grunde können nur zwei Arten von 
+    Performance Metrik dargestellt werden können. Wurden bis jetzt alle Richtlinien beachtet, 
+    sollten die Daten über einen simplen SQL Befehl, gezeigt im Beispiel \ref{lst:sqlex} ohne 
+    weitere Probleme extrahiert werden können. Im Grunde können nur zwei Arten von 
     Werten direkt gemessen werden: Distanzen und Zählungen. Weil die reduzierten Daten oftmals 
     modifiziert oder korrigiert werden müssen, sollten immer die rohen und die reduzierten 
     Ergebnisse des Experiments dokumentiert werden.
 
 
+    \begin{listing}[H]
+        %caption wird benötigt, um das lisiting in das verzeichnis aufzunehmen, same mit abbildungen
+        \caption[SQL Befehl, zur Extraktion der Ergebnisse]{SQL Befehl, um Ergebnisse aus dem Experiment zu extrahieren}
+    % linenos -> numeriert zeilen, frame=lines -> grenzt code mit linien ab, fontsize -> schriftgröße, 
+    % firstnumber -> zeile, in der snippet anfängt, muss al erster parameter stehen
+    % unter den mathescape eingaben dann die gewählte sprache in {}
+    % verfügbare sprachen via pygmentize dokumentation 
+    \begin{minted}
+        [
+            firstnumber=5,
+            frame=lines,
+            framesep=2mm,
+            baselinestretch=1.2,
+            linenos
+            ]
+    {sql} 
+    
+    USE AdventureWorks2012;
+    GO
+    SELECT *
+    FROM Production.Product
+    ORDER BY Name ASC;
+    -- Alternate way.
+    USE AdventureWorks2012;
+    GO
+    SELECT p.*
+    FROM Production.Product AS p
+    ORDER BY Name ASC;
+    GO
+    
+    \end{minted}
+        \label{lst:sqlex}
+    \end{listing}

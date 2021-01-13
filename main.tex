@@ -11,8 +11,6 @@
     % alle Seiten und Tabellen in Reihenfolge
     \include{content/deckblatt.tex}
     \tableofcontents
-    \renewcommand{\listoflistingscaption}{Listingverzeichnis}
-    \listoflistings
     \newpage
 
         % abstand zwischen neuen absätzen erhöhen, am anfang des eigentlichen contents gelistet
@@ -34,6 +32,9 @@
 
     \newpage
     \listoffigures
+    \newpage
+    \renewcommand{\listoflistingscaption}{Listingverzeichnis}
+    \listoflistings
     \newpage
     \printbibliography
 
