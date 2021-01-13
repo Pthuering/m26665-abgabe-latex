@@ -6,29 +6,21 @@
 
 \begin{document}
 
+% configuration für hintergründe der seiten
 \include{config/background}
     
     % alle Seiten und Tabellen in Reihenfolge
-    \include{content/deckblatt.tex}
+    \include{content/deckblatt}
     \tableofcontents
     \newpage
 
-        % abstand zwischen neuen absätzen erhöhen, am anfang des eigentlichen contents gelistet
-\parskip 10pt % andere einheiten px, em, ex und viele mehr
+    % abstand zwischen neuen absätzen erhöhen, am anfang des eigentlichen contents gelistet
+    \parskip 8pt % andere einheiten px, em, ex und viele mehr
 
     \include{content/hinweise}
-    \include{content/1einleitung}
     \include{content/2problem}
     \include{content/3analyse}
-    \include{content/4hypothese}
     \include{content/5synthese}
-    \include{content/6validation}
-    \include{content/7fazit}
-    \include{content/kapitel_01}
-    \include{content/kapitel_02}
-    \include{content/kapitel_03}
-
-    Siehe \nameref{lab:eidesstattliche_erklaerung}
 
     \newpage
     \listoffigures
@@ -40,6 +32,7 @@
 
     \include{content/appendix/appendix}
 
+    \include{content/misc/eidesstatliche}
     % kommt immer ganz an ende
     \include{config/eidesstattliche_untersch}
    
