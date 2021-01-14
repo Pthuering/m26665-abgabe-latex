@@ -1,13 +1,14 @@
-\appendix
+\appendix 
 
-\section*{Anhang}
+\section*{Anhang}   \label{chap:appendix}
 \addcontentsline{toc}{section}{Anhang}
+
 
 % um numerierung im anhang trotzdem zu erhalten
 \renewcommand{\thesubsection}{\Alph{subsection}}
 % notation von abbildungen wird geänder: 1 > A.1 
 \renewcommand{\thefigure}{\thesubsection.\arabic{figure}}
-%an dieser stelle würde ich gern die notation von listings im anhang anpassen, bisher aber leider erfolglos
+% an dieser stelle würde ich gern die notation von listings im anhang anpassen, bisher aber leider erfolglos
 
 % berichtigen des counters für abbildungen
 \setcounter{figure}{0}
@@ -71,16 +72,28 @@ nur wenig Sinn ergeben.
 \setcounter{figure}{0}
 \subsection{Danksagungen}
 
-An dieser Stelle möchte ich meinen Dank für verschiedene Parteien aussprechen, die mir bei der Schaffung
-dieser Abgabe geholfen haben. Danke an mein Frühstück, weil es häufiger rein als raus ging. Danke an 
-Visual Studio Code, dafür dass es kein einziges mal abgestürzt ist und zu meiner eh schon viel zu 
-langen Arbeitszeit nicht noch mehr beigetragen hat. Schließlich, danke an meine Augen, die mich nach einem 
-ganzen Semester voller Bildschirm anstarren wahrscheinlich am liebsten ohne PC unter einer Brücke aussetzen
-würden. Im letzten Bild \ref{fig:appendix_bird} dieser Arbeit, noch eine süße Katze zum entspannen. 
+Hier noch die letzte Anforderung an das Dokument in Form eines Bildes von unserem \nameref{fig:appendix_logo} im Anhang.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
+labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et 
+ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum 
+dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet 
+clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet 
+clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+
+ 
     % großes H als kommando, damit content genau dort angezeight wird
+    % aus einem unbekannten Grund führt die Verlinkung dieser Datei zu einer anderen Abbildung, obwohl 
+    % die referenz die passende ist... könnte es am Renew Command für \thefigure liegen?
+    % auch wenn \setcounter die nummern der abbildungen nicht zurück setzt, fängt das dokument trotzdem 
+    % wieder neu an. es scheint, die tatsache, dass diese abbildung theoretisch wieder 'abbildung 1' ist, 
+    % könnte der Grund für den Bug sein 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.9\textwidth]{graphics/bird.jpg}
-        \caption[Tierforschung Beispiel Katze]{Eine Katze auf der Jagd}
-        \label{fig:appendix_bird}
+        \includegraphics[width=0.9\textwidth]{graphics/HSHARZ.png}
+        \caption[Hochschullogo]{Das Logo unserer Hochschule}
+        \label{fig:appendix_logo}
     \end{figure}

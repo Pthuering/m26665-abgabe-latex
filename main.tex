@@ -11,6 +11,7 @@
     
     % alle Seiten und Tabellen in Reihenfolge
     \include{content/deckblatt}
+    % inhaltsverzeichnis
     \tableofcontents
     \newpage
 
@@ -18,16 +19,19 @@
     \parskip 8pt % andere einheiten px, em, ex und viele mehr
 
     \include{content/hinweise}
-    \include{content/2problem}
-    \include{content/3analyse}
-    \include{content/5synthese}
+    \include{content/1problem}
+    \include{content/2analyse}
+    \include{content/3synthese}
 
     \newpage
+    % abbildungsverzeichnis
     \listoffigures
     \newpage
+    % listingverzeichnis
     \renewcommand{\listoflistingscaption}{Listingverzeichnis}
     \listoflistings
     \newpage
+    % literaturverzeichnis
     \printbibliography
 
     \include{content/appendix/appendix}
