@@ -71,9 +71,9 @@ nur wenig Sinn ergeben.
 
 
 \setcounter{figure}{0}
-\subsection{Danksagungen}
 
-Hier noch die letzte Anforderung an das Dokument in Form eines Bildes von unserem \nameref{fig:appendix_logo} im Anhang.
+
+Hier noch die letzte Anforderung an das Dokument in Form eines Bildes von unserem Hochschullogo im Anhang.
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
 labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et 
@@ -86,15 +86,13 @@ aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
 clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
 
  
-    % großes H als kommando, damit content genau dort angezeight wird
-    % aus einem unbekannten Grund führt die Verlinkung dieser Datei zu einer anderen Abbildung, obwohl 
-    % die referenz die passende ist... könnte es am Renew Command für \thefigure liegen?
-    % auch wenn \setcounter die nummern der abbildungen nicht zurück setzt, fängt das dokument trotzdem 
-    % wieder neu an. es scheint, die tatsache, dass diese abbildung theoretisch wieder 'abbildung 1' ist, 
-    % könnte der Grund für den Bug sein 
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.9\textwidth]{graphics/HSHARZ.png}
         \caption[Hochschullogo]{Das Logo unserer Hochschule}
         \label{fig:appendix_logo}
     \end{figure}
+
+
+    % links aus text und aus den verzeichnissen funktionieren nun normal, allerdings nur bei nutzung von \ref
+    % \nameref führt immer noch zum falschen ergebnis
