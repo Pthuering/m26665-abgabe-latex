@@ -11,8 +11,12 @@
 \renewcommand{\theHfigure}{\thesubsection.\arabic{figure}}%<---!!!!--- Erklärung: https://tex.stackexchange.com/questions/442514/ref-jumps-not-to-the-right-figure-in-appendix
 % an dieser stelle würde ich gern die notation von listings im anhang anpassen, bisher aber leider erfolglos
 
-% berichtigen des counters für abbildungen
+% notation für listings ändern, gleich wie abbildungen
+\renewcommand{\thelisting}{\thesubsection.\arabic{listing}}
+
+% berichtigen des counters für abbildungen und listings
 \setcounter{figure}{0}
+\setcounter{listing}{0}
 
 \subsection{Nachbereitung}
 
